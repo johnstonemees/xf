@@ -39,36 +39,16 @@ public class MainActivity extends Activity {
         result = (TextView)this.findViewById(R.id.textView2);
         Start.setOnClickListener(new audioListener());
         Stop.setOnClickListener(new audioListener());
-        //³õÊ¼»¯Ñ¶·ÉAPPID
+        //ï¿½ï¿½Ê¼ï¿½ï¿½Ñ¶ï¿½ï¿½APPID
         SpeechUtility.createUtility(MainActivity.this, SpeechConstant.APPID +"=56516737");  
         initSpeechRecognizer();
-        initSpeechSynthesizer(); //¶ÔÊ¶±ğÓïÒôºóµÄÎÄ±¾½øĞĞÓïÒôºÏ³É  
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings || super.onOptionsItemSelected(item)) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 	
 	 /**
-     * <p>±êÌâ: MainActivity</p>
-     * <p>ÀàÃèÊö: </p>
-     * ×÷Õß:Administrator
-     * <p>´´½¨Ê±¼ä£º2015Äê11ÔÂ22ÈÕ ÉÏÎç11:27:56</p>
+     * <p>ï¿½ï¿½ï¿½ï¿½: MainActivity</p>
+     * <p>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: </p>
+     * ï¿½ï¿½ï¿½ï¿½:Administrator
+     * <p>ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2015ï¿½ï¿½11ï¿½ï¿½22ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:27:56</p>
      */
     private void initSpeechRecognizer(){
     	mlat = SpeechRecognizer.createRecognizer(MainActivity.this, null);
@@ -81,14 +61,14 @@ public class MainActivity extends Activity {
 	
     private void initSpeechSynthesizer(){
     	mTts = SpeechSynthesizer.createSynthesizer(MainActivity.this, null);
-    	mTts.setParameter(SpeechConstant.VOICE_NAME, "vixx");//ÉèÖÃ·¢ÒôÈË  
-    	mTts.setParameter(SpeechConstant.SPEED, "50");//ÉèÖÃÓïËÙ  
-    	mTts.setParameter(SpeechConstant.VOLUME, "80");//ÉèÖÃÒôÁ¿£¬·¶Î§0~100  
-    	mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD); //ÉèÖÃÔÆ¶Ë  
-    	//ÉèÖÃºÏ³ÉÒôÆµ±£´æÎ»ÖÃ£¨¿É×Ô¶¨Òå±£´æÎ»ÖÃ£©£¬±£´æÔÚ¡°./sdcard/iflytek.pcm¡±  
-    	//±£´æÔÚSD¿¨ĞèÒªÔÚAndroidManifest.xmlÌí¼ÓĞ´SD¿¨È¨ÏŞ  
-    	//Èç¹û²»ĞèÒª±£´æºÏ³ÉÒôÆµ£¬×¢ÊÍ¸ÃĞĞ´úÂë  
-    	//mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");    
+    	mTts.setParameter(SpeechConstant.VOICE_NAME, "vixx");//ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½  
+    	mTts.setParameter(SpeechConstant.SPEED, "50");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+    	mTts.setParameter(SpeechConstant.VOLUME, "80");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î§0~100  
+    	mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD); //ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
+    	//ï¿½ï¿½ï¿½ÃºÏ³ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½å±£ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½./sdcard/iflytek.pcmï¿½ï¿½
+    	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SDï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½AndroidManifest.xmlï¿½ï¿½ï¿½Ğ´SDï¿½ï¿½È¨ï¿½ï¿½
+    	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ï³ï¿½ï¿½ï¿½Æµï¿½ï¿½×¢ï¿½Í¸ï¿½ï¿½Ğ´ï¿½ï¿½ï¿½
+    	//mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");
     }
     
     private RecognizerListener mRecoListener = new RecognizerListener(){
@@ -104,7 +84,7 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated method stub
 			result.setText(resultTemp.toString());
 			resultTemp.setLength(0);
-			//3.¿ªÊ¼ºÏ³É 
+			//3.è¯­éŸ³åˆæˆ
 			mTts.startSpeaking(result.getText().toString(), mSynListener);
 		}
 
@@ -123,9 +103,9 @@ public class MainActivity extends Activity {
 		@Override
 		public void onResult(RecognizerResult arg0, boolean arg1) {
 			// TODO Auto-generated method stub
-			Log.d("ÓïÒôÊ¶±ğ½á¹ûÎª£º", arg0.getResultString());
+			Log.d("ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½", arg0.getResultString());
 			resultTemp = new StringBuffer();
-			resultTemp.append(JsonParser.parseIatResult(arg0.getResultString().toString()));
+			//resultTemp.append(JsonParser.parseIatResult(arg0.getResultString().toString()));
 
 
 		}
@@ -191,9 +171,9 @@ public class MainActivity extends Activity {
          public void onClick(View v) {  
              if (v == Start) {  
              	if(mRecoListener == null){
-             		System.out.println("´´½¨mRecoListener¶ÔÏó´íÎó");
+             		System.out.println("ï¿½ï¿½ï¿½ï¿½mRecoListenerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
              	}
-             	// ¿ªÆôÒôÆµÎÄ¼şĞ´ÈëÏß³Ì  
+             	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½Ä¼ï¿½Ğ´ï¿½ï¿½ï¿½ß³ï¿½  
                 mlat.startListening(mRecoListener);
              	
              }  
